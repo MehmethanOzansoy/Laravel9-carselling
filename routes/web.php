@@ -1,6 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +22,10 @@ Route::get('/Hello', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\HomeController;
+
+Route::get('/',[HomeController::class,'index']) -> name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
