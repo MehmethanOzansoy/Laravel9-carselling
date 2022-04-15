@@ -19,19 +19,26 @@
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
      
-
+    @yield("head")
 
 </head>
 
 <body>
+  
+@include('home.menu')
+ 
+@section('slider')
+     @include('home.slider')
+@show
 
-@section('preloader')
-     @include('home.preloader')   
-@show      
-     @include('home.menu')
-     @include('home.header')
-     @include('home.FeaturedCars')
-     @include('home.contact')
-     @include('home.footer')
+@yield('content')
+     
+@include('home.header')
+     
+@include('home.contact')
+     
+@include('home.footer')
+
+@yield('foot')
     </body>
 </html>

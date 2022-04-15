@@ -12,3 +12,7 @@
  @section('content')
      <p>This is my body content.</p>
  @endsection
+
+ @section('foot')
+     <p>This is my body foot area.</p>
+ @endsection

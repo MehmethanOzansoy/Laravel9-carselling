@@ -1,4 +1,7 @@
-<div class="owl-carousel owl-theme home-slider">
+     <!-- HOME -->
+     <section id="home">
+          <div class="row">
+               <div class="owl-carousel owl-theme home-slider">
                     <div class="item item-first">
                          <div class="caption">
                               <div class="container">
@@ -35,3 +38,7 @@
                          </div>
                     </div>
                </div>
+          </div>
+     </section>
+
+    
