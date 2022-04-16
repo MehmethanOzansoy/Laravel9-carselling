@@ -16,7 +16,12 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return view('admin.category.index');
+        $data = Category::all();
+
+        return view('admin.category.index',[
+            
+            'data' => $data
+        ]);
     }
 
     /**
@@ -47,15 +52,16 @@ class CategoryController extends Controller
         $data->description = $request->description;
         $data->status = $request->status;
         $data->save();
+        return redirect('admin/category');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Catogory  $catogory
+     * @param  \App\Models\Category  $catogory
      * @return \Illuminate\Http\Response
      */
-    public function show(Catogory $catogory)
+    public function show(Category $category)
     {
         //
     }
@@ -63,22 +69,23 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Catogory  $catogory
+     * @param  \App\Models\Category  $catogory
      * @return \Illuminate\Http\Response
      */
-    public function edit(Catogory $catogory)
+    public function edit(Category $category,$id)
     {
         //
+        echo "edit page id: ", $id;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Catogory  $catogory
+     * @param  \App\Models\Category  $catogory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Catogory $catogory)
+    public function update(Request $request, Category $catogory)
     {
         //
     }
@@ -86,10 +93,10 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Catogory  $catogory
+     * @param  \App\Models\Category  $catogory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Catogory $catogory)
+    public function destroy(Category $category)
     {
         //
     }

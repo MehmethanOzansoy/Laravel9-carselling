@@ -7,52 +7,63 @@
 <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <div class="row">
-                    <div class="col-xl-0 col-lg-0 col-md-0 col-sm-0 col-0">
-                        <h3 class="text-center">Add Category</h3>
-                        <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                </div>
-                <!-- /.card-body -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  col-12">
+                         <div class = "card">
+                              <div class="card-header">
+                                <h3 class="card-title">Category List</h3>
+                                    <div class="col-sm-6">
+                                        </div>
+                                    </div>
+                                  </div>
+                                          <!-- /.card-header -->
+                                          <div class="card-body">
+                                            <table class="table  table-success table-striped">
+                                              <thead>
+                                                <tr>
+                                                  <th style="width: 10px">id</th>
+                                                  <th>Title</th>
+                                                  <th>Keywords</th>
+                                                  <th>Descriiption</th>
+                                                  <th>İmage</th>
+                                                  <th>Status</th>
+                                                  <th style="width: 40px">Edit</th>
+                                                  <th style="width: 40px">Delete</th>
+                                                  <th style="width: 40px">Show</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
-            </div>
-                        
-                    </div>
-                </div>
-            </div>
+                                              @foreach( $data as $rs)
+                                                <tr>
+                                                  <td>{{$rs->id}}</td>
+                                                  <td>{{$rs->title}}</td>
+                                                  <td>{{$rs->keywords}}</td>
+                                                  <td>{{$rs->description}}</td>
+                                                  <td>{{$rs->image}}</td>
+                                                  <td>{{$rs->status}}</td>
+                                                  <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-block btn-success btn-sm">Edit</a></td>
+                                                  <td><a href="/admin/category/delete/{{$rs->id}}" class="btn btn-block btn-danger btn-sm">Delete</a></td>
+                                                  <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-block btn-warning btn-sm">Show</a></td>
+                                                </tr>
+                                              @endforeach
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                            <!-- /.card-body -->
+                                            <div class="card-footer clearfix">
+                                              <ul class="pagination pagination-sm m-0 float-right">
+                                                <li class="page-item"><a class="page-link" href="#">«</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">»</a></li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>    
+                                </div>
+                            </div>
+                        </div>
 
 @endsection
 
