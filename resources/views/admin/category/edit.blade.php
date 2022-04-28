@@ -12,11 +12,19 @@
                         <h1 class="text-left">Edit Category: {{$data->title}}</h1>
                                 <div class="card card-primary">
                                     <div class="card-header">
-                                        <h3 class="card-title">Category Element</h3>
+                                        <h3 class="card-title">Category</h3>
                                         </div>
+                                        <div class="col-sm-6">
+                                            <ol class="breadcrumb float-sm">
+                                                <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
+                                                <li class="breadcrumb-item active">Edit Category</li>
+                                            </ol>
+
+                                        </div>
+                                    
                                         <!-- /.card-header -->
                                         <!-- form start -->
-                                        <form role = "form" action = "/admin/category/update/{{$data->id}}" method = "post">
+                                        <form role = "form" action = "{{route('admin.category.edit',['id'=>$data->id])}}" method = "post">
                                         @csrf
                                             <div class="card-body">
                                             <div class="form-group">

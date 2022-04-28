@@ -11,7 +11,7 @@
             </div> 
             <div class="col-sm-6">
               <ol class ="breadcrumb float-sm-left">
-                <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                 <li class="breadcrumb-item active">Category List</li>
               </ol>
 
@@ -41,9 +41,9 @@
                                       <td>{{$rs->description}}</td>
                                       <td>{{$rs->image}}</td>
                                       <td>{{$rs->status}}</td>
-                                      <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-block btn-success btn-sm" >Edit</a></td>
-                                      <td><a href="/admin/category/delete/{{$rs->id}}" class="btn btn-block btn-danger btn-sm" onclick ="return confirm('Deleted !!! Are u sure ')">Delete</a></td>
-                                      <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-block btn-warning btn-sm">Show</a></td>
+                                      <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm" >Edit</a></td>
+                                      <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm" onclick ="return confirm('Deleted !!! Are u sure ')">Delete</a></td>
+                                      <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-block btn-warning btn-sm">Show</a></td>
                                     </tr>
                                   @endforeach
                                   </tbody>
@@ -66,7 +66,7 @@
                                   </div>
                                   
                 </div>
-                <a href="/admin/category/create" class="btn btn-block btn-info" style = "width: 200px" >Add Category</a>
+                <a href="{{route('admin.category.create')}}" class="btn btn-block btn-info" style = "width: 200px" >Add Category</a>
   </div>
 
 @endsection
