@@ -68,9 +68,8 @@
 @endsection
 
 @section('foot')
-<p>This is my body foot area.</p>
 
-@endsection
+
 
 <!--  <div class="col">
 

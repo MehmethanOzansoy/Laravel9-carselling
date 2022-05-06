@@ -21,12 +21,14 @@
  @include('admin.header')
 
  @section('admin.sidebar')
-     @include('admin.sidebar')
+     @include("admin.sidebar")
  @show
 
  @yield('content')
  
- @include('admin.footer')
+ 
+ @include("admin.footer")
+
  @yield('foot')
  
     

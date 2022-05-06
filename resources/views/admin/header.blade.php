@@ -1,5 +1,5 @@
     <div class="dashboard-main-wrapper">
-         <div class="dashboard-header">
+        <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
                 <a class="navbar-brand" href="{{asset('assets')}}/admin/index.html">Concept</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
                                                 <div class="notification-info">
                                                     <div class="notification-list-user-img"><img src="{{asset('assets')}}/admin/assets/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
                                                     <div class="notification-list-user-block"><span class="notification-list-user-name">
-John Abraham</span>is now following you
+                                                            John Abraham</span>is now following you
                                                         <div class="notification-date">2 days ago</div>
                                                     </div>
                                                 </div>
@@ -66,13 +66,13 @@ John Abraham</span>is now following you
                                 <li class="connection-list">
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/github.png" alt="" > <span>Github</span></a>
+                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/github.png" alt=""> <span>Github</span></a>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/dribbble.png" alt="" > <span>Dribbble</span></a>
+                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/dribbble.png" alt=""> <span>Dribbble</span></a>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/dropbox.png" alt="" > <span>Dropbox</span></a>
+                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/dropbox.png" alt=""> <span>Dropbox</span></a>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -80,10 +80,10 @@ John Abraham</span>is now following you
                                             <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/mail_chimp.png" alt="" ><span>Mail chimp</span></a>
+                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/mail_chimp.png" alt=""><span>Mail chimp</span></a>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/slack.png" alt="" > <span>Slack</span></a>
+                                            <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/slack.png" alt=""> <span>Slack</span></a>
                                         </div>
                                     </div>
                                 </li>
@@ -97,7 +97,7 @@ John Abraham</span>is now following you
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">
-John Abraham</h5>
+                                        John Abraham</h5>
                                     <span class="status"></span><span class="ml-2">Available</span>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
