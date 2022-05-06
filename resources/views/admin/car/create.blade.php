@@ -76,14 +76,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">KM</label>
-                                <input type="number" class="form-control" name="km"value="0">
+                                <input type="text" class="form-control" name="km" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Motor Power</label>
                                 <input type="text" class="form-control" name="motor_power" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Detail</label>
+                                <label for="exampleInputEmail1">Detail Info</label>
                                 <textarea class="form-control" name="detail">
 
                                 </textarea>

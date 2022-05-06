@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Show Category: '.$data->title)
+@section('title', 'Show Car: '.$data->title)
 
 
 @section('content')
@@ -13,7 +13,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm">
                         <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Show Category</li>
+                        <li class="breadcrumb-item active">Show Car</li>
                     </ol>
 
                 </div>
@@ -32,6 +32,11 @@
                                 </tr>
 
                                 <tr>
+                                    <th>Category</th>
+                                    <td>{{$data->category_id}}</td>
+                                </tr>
+
+                                <tr>
                                     <th>Title</th>
                                     <td>{{$data->title}}</td>
                                 </tr>
@@ -40,10 +45,46 @@
                                     <th>Keyword</th>
                                     <td>{{$data->keywords}}</td>
                                 </tr>
+                                <tr>
+                                    <th>Price</th>
+                                    <td>{{$data->price}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Modal</th>
+                                    <td>{{$data->modal}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Year</th>
+                                    <td>{{$data->year}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Fuel</th>
+                                    <td>{{$data->fuel}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gear</th>
+                                    <td>{{$data->gear}}</td>
+                                </tr>
+                                <tr>
+                                    <th>KM</th>
+                                    <td>{{$data->km}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Motor Power</th>
+                                    <td>{{$data->motor_power}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Detail Info</th>
+                                    <td>{{$data->detail}}</td>
+                                </tr>
 
                                 <tr>
                                     <th>Image</th>
-                                    <td></td>
+                                    <td>
+                                        @if ($data->image)
+                                        <img src="{{Storage::url($data->image)}}" style="height: 100px">
+                                        @endif
+                                    </td>
                                 </tr>
 
                                 <tr>
@@ -70,10 +111,10 @@
                 <div class="row">
 
                     <div class="col-sm-1">
-                        <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-block btn-info" style="width: 100px">Edit</a>
+                        <a href="{{route('admin.car.edit',['id'=>$data->id])}}" class="btn btn-block btn-info" style="width: 100px">Edit</a>
                     </div>
                     <div class="col-sm-1">
-                        <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" onclick="return confirm('Deleted !!! Are u sure ')" class="btn btn-block btn-danger" style="width: 100px">Delete</a>
+                        <a href="{{route('admin.car.destroy',['id'=>$data->id])}}" onclick="return confirm('Deleted !!! Are u sure ')" class="btn btn-block btn-danger" style="width: 100px">Delete</a>
                     </div>
 
                 </div>
@@ -85,9 +126,3 @@
 </div>
 @endsection
 
-@section('foot')
-<p>This is my body foot area.</p>
-
-<div class="card-footer">Footer</div>
-
-@endsection

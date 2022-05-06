@@ -153,8 +153,12 @@ class AdminCarController extends Controller
     public function destroy(Car $car, $id)
     {
         //
-        $data = Category::find($id);
-        Storage::delete($data->image);
+        $data = car::find($id);
+        if ($data->image && Storage::disk('public')->exists($data->image)) {
+            // ...
+            Storage::delete($data->image);
+        }
+
         $data->delete();
         return redirect('admin/car');
     }

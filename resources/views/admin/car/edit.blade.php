@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Edit Category: '.$data->title)
+@section('title', 'Edit Car '.$data->title)
 
 
 @section('content')
@@ -9,31 +9,31 @@
     <div class="container-fluid dashboard-content">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <h1 class="text-left">Edit Category: {{$data->title}}</h1>
+                <h1 class="text-left">Edit Car {{$data->title}}</h1>
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Category</h3>
+                    <div class="card bg-info text-white">
+                        <h3 class="card-title">Car</h3>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm">
                             <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                            <li class="breadcrumb-item active">Edit Category</li>
+                            <li class="breadcrumb-item active">Edit Car</li>
                         </ol>
 
                     </div>
 
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('admin.car.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Parent Category</label>
+                                <label>Parent Car</label>
 
-                                <select class="form-control select2" name="parent_id">
-                                    <option value="0" selected="selected">Main Category</option>
+                                <select class="form-control select2" name="category_id">
                                     @foreach($datalist as $rs)
-                                            <option value="{{ $rs->id }}" @if   ($rs->id == $data-> parent_id) selected="selected" @endif >
+                                            <option value="{{ $rs->id }}" @if   ($rs->id == $data-> category_id) selected="selected" @endif >
                                                 {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title) }} 
                                             </option> 
                                     @endforeach
@@ -54,6 +54,43 @@
                                 <label for="exampleInputEmail1">Description</label>
                                 <input type="text" class="form-control" name="description" value="{{$data->description}}">
                             </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Price</label>
+                                <input type="text" class="form-control" name="price" value="{{$data->price}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Brand</label>
+                                <input type="text" class="form-control" name="brand" value="{{$data->brand}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Modal</label>
+                                <input type="text" class="form-control" name="modal" value="{{$data->modal}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Year</label>
+                                <input type="integer" class="form-control" name="year" value="{{$data->year}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Fuel</label>
+                                <input type="text" class="form-control" name="fuel" value="{{$data->fuel}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Gear</label>
+                                <input type="text" class="form-control" name="gear" value="{{$data->gear}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">KM</label>
+                                <input type="text" class="form-control" name="km" value="{{$data->km}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Motor Power</label>
+                                <input type="text" class="form-control" name="motor_power" value="{{$data->motor_power}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Detail Info</label>
+                                <textarea class="form-control" name="detail">
+                                "{{$data->detail}}"
+                                </textarea>
 
                             <div class="form-group">
                                 <label for="exampleInputFile">Image</label>
@@ -97,9 +134,3 @@
 </div>
 @endsection
 
-@section('foot')
-<p>This is my body foot area.</p>
-
-<div class="card-footer">Footer</div>
-
-@endsection
