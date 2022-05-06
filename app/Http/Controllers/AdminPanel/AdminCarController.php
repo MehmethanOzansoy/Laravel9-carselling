@@ -54,12 +54,12 @@ class AdminCarController extends Controller
     {
         //
         $data = new Car();
-        $data->category_id = $request->category_id;
+        $data->category_id =$request->category_id ;
         $data->user_id = 0; //$request->user_id;
-        $data->brand_id = $request->brand_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+        $data->detail = $request->detail;
         $data->price = $request->price;
         $data->brand = $request->brand;
         $data->modal = $request->modal;
@@ -124,10 +124,10 @@ class AdminCarController extends Controller
         $data = Car::find($id);
         $data->category_id = $request->category_id;
         $data->user_id = 0; //$request->user_id;
-        $data->brand_id = $request->brand_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+        $data->detail = $request->detail;
         $data->price = $request->price;
         $data->brand = $request->brand;
         $data->modal = $request->modal;

@@ -12,7 +12,7 @@
       <div class="col-sm-12">
         <ol class="breadcrumb float">
           <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-          <li class="breadcrumb-item active">Category List</li>
+          <li class="breadcrumb-item active">Car List</li>
         </ol>
 
       </div>
@@ -30,6 +30,7 @@
               <th>Gear</th>
               <th>KM</th>
               <th>Motor Power</th>
+              <th>detail</th>
               <th>Image</th>
               <th>Status</th>
               <th style="width: 40px">Edit</th>
@@ -51,6 +52,7 @@
               <td>{{$rs->gear}}</td>
               <td>{{$rs->KM}}</td>
               <td>{{$rs->motor_power}}</td>
+              <td>{{$rs->detail}}</td>
               <td>
                 @if ($rs->image)
                 <img src="{{Storage::url($rs->image)}}" style="height: 40px">
@@ -86,7 +88,7 @@
 
 @endsection
 
+
 @section('foot')
-<p>This is my body foot area.</p>
 
 @endsection

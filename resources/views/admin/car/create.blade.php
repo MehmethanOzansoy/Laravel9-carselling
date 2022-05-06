@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Add Category')
+@section('title', 'Add Car')
 
 
 @section('content')
@@ -9,32 +9,28 @@
     <div class="container-fluid dashboard-content">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <h3 class="text-center">Add Category</h3>
-                <div class="card-body">
-                    Create Category
-                </div>
+                <h3 class="text-center">Add Car</h3>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm">
                         <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Add Category</li>
+                        <li class="breadcrumb-item active">Add Car</li>
                     </ol>
 
                 </div>
 
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Category Element</h3>
+                        <h3 class="card-title">Car Element</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('admin.car.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Parent Category</label>
+                                <label>Parent Car</label>
 
-                                <select class="form-control select2" name="parent_id">
-                                <option value="0" selected="selected">Main Category</option>
+                                <select class="form-control select2" name="category_id">
                                 @foreach($data as $rs)
                                            <option value="{{ $rs->id }}">{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}</option> 
                                 @endforeach
@@ -48,11 +44,49 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Keywords</label>
-                                <input type="text" class="form-control" name="keywords" placeholder="Title">
+                                <input type="text" class="form-control" name="keywords" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Description</label>
-                                <input type="text" class="form-control" name="description" placeholder="Title">
+                                <input type="text" class="form-control" name="description" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Price</label>
+                                <input type="text" class="form-control" name="price" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Brand</label>
+                                <input type="text" class="form-control" name="brand" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Modal</label>
+                                <input type="text" class="form-control" name="modal" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Year</label>
+                                <input type="integer" class="form-control" name="year">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Fuel</label>
+                                <input type="text" class="form-control" name="fuel" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Gear</label>
+                                <input type="text" class="form-control" name="gear" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">KM</label>
+                                <input type="number" class="form-control" name="km"value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Motor Power</label>
+                                <input type="text" class="form-control" name="motor_power" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Detail</label>
+                                <textarea class="form-control" name="detail">
+
+                                </textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputFile">Image</label>
@@ -100,11 +134,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('foot')
-<p>This is my body foot area.</p>
-
-<div class="card-footer">Footer</div>
-
 @endsection

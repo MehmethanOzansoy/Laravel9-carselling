@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6  col-6">
       </div>
-      <div class="col-sm-left">
+      <div class="col-sm-12">
         <ol class="breadcrumb float-sm-left">
           <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
           <li class="breadcrumb-item active">Category List</li>
@@ -49,7 +49,7 @@
               <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-block btn-warning btn-sm">Show</a></td>
             </tr>
             @endforeach
-         
+
 
           </tbody>
 
@@ -64,22 +64,21 @@
   </div>
   <a href="{{route('admin.category.create')}}" class="btn btn-block btn-info" style="width: 200px">Add Category</a>
 </div>
+<div class="col">
 
-@endsection
+  <div class="card-footer clearfix">
+    <ul class="pagination pagination-sm m-0 float-right">
+      <li class="page-item"><a class="page-link" href="#">«</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">»</a></li>
+    </ul>
+  </div>
 
-@section('foot')
+  @endsection
 
 
+  @section('foot')
 
-<!--  <div class="col">
-
-            <div class="card-footer clearfix">
-              <ul class="pagination pagination-sm m-0 float-right">
-                <li class="page-item"><a class="page-link" href="#">«</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">»</a></li>
-              </ul>
-            </div>
- -->
+  @endsection

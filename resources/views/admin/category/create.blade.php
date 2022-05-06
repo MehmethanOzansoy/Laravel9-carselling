@@ -103,8 +103,5 @@
 @endsection
 
 @section('foot')
-<p>This is my body foot area.</p>
-
-<div class="card-footer">Footer</div>
 
 @endsection

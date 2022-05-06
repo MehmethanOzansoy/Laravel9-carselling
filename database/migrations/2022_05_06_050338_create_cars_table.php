@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id')->nullable();
             $table->foreignId('user_id')->nullable();
-            $table->foreignId('brand_id')->nullable();
             $table->string('title');
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
@@ -29,8 +28,9 @@ return new class extends Migration
             $table->string('fuel')->nullable();
             $table->string('gear')->nullable();
             $table->float('KM')->nullable();
+            $table->string('detail')->nullable();
             $table->string('motor_power')->nullable();
-            $table->string('status',6)->default('False');
+            $table->string('status',6);
             $table->timestamps();
         });
     }
