@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-            $table->float('price')->nullable();
+            $table->string('price')->nullable();
             $table->string('brand')->nullable();
             $table->string('modal')->nullable();
             $table->integer('year')->nullable();
