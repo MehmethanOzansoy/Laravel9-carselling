@@ -18,16 +18,9 @@
 
 <body class="hold-transition sidebar-mini">
 
- @include('admin.header')
-
- @section('admin.sidebar')
-     @include("admin.sidebar")
- @show
-
  @yield('content')
  
- 
- <@include("admin.footer")
+
 
  @yield('foot')
  

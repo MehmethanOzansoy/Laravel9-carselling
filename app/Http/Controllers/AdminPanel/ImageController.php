@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\car;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -15,6 +17,13 @@ class ImageController extends Controller
     public function index($cid)
     {
         //
+        $car = car::find($cid);
+        $images = Image::where('car_id',$cid);
+        return view('admin.image.index', [
+
+            'car' => $car,
+            'images' => $images,
+        ]);
     }
 
     /**
