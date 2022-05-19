@@ -4,7 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\AdminCarController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
-
+use App\Http\Controllers\AdminPanel\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +60,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
                 Route::get('/destroy/{id}','destroy') -> name('destroy');
                 Route::get('/show/{id}','show') -> name('show');
     });
+        //************************ Admin Car Image Gallarey Routes ********************//
+        Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
+                Route::get('/{cid}','index') -> name('index');
+                Route::get('/create{cid}','create') -> name('create');
+                Route::post('/store{cid}','store') -> name('store');
+                Route::post('/update/{cid}/{id}','update') -> name('update');
+                Route::get('/destroy/{cid}/{id}','destroy') -> name('destroy');
+
+});
         
 });
 ?>

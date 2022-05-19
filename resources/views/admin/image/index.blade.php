@@ -1,9 +1,3 @@
-@extends('layouts.adminbase')
-
-@section('title', 'Car List')
-
-
-@section('content')
 <div class="dashboard-wrapper">
   <div class="container-fluid dashboard-content">
     <div class="row">
@@ -12,7 +6,7 @@
       <div class="col-sm-12">
         <ol class="breadcrumb float">
           <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-          <li class="breadcrumb-item active">Car List</li>
+          <li class="breadcrumb-item active">Car Images List</li>
         </ol>
 
       </div>
@@ -20,23 +14,11 @@
         <table class="table table-bordered">
             <tr>
               <th style="width: 10px">Id</th>
-              <th>Category</th>
               <th>Title</th>
-              <th>Price</th>
-              <th>Brand</th>
-              <th>Modal</th>
-              <th>Year</th>
-              <th>Fuel</th>
-              <th>Gear</th>
-              <th>KM</th>
-              <th>Motor Power</th>
-              <th>detail</th>
               <th>Image</th>
-              <th>Image Gallery</th>
               <th>Status</th>
-              <th style="width: 40px">Edit</th>
-              <th style="width: 40px">Delete</th>
-              <th style="width: 40px">Show</th>
+              <th style="width: 40px">Update</th>
+              <th style="width: 40px">delete</th>
             </tr>
           <tbody>
 
@@ -45,15 +27,6 @@
               <td>{{$rs->id}}</td>
               <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title) }}</td>
               <td>{{$rs->title}}</td>
-              <td>{{$rs->price}}</td>
-              <td>{{$rs->brand}}</td>
-              <td>{{$rs->modal}}</td>
-              <td>{{$rs->year}}</td>
-              <td>{{$rs->fuel}}</td>
-              <td>{{$rs->gear}}</td>
-              <td>{{$rs->KM}}</td>
-              <td>{{$rs->motor_power}}</td>
-              <td>{{$rs->detail}}</td>
               <td>
                 @if ($rs->image)
                 <img src="{{Storage::url($rs->image)}}" style="height: 40px">
@@ -63,9 +36,8 @@
 
               <td><img src="{{asset('assets')}}/admin/assets/images/Gallery.png" style="height: 40px"></td>
               <td>{{$rs->status}}</td>
-              <td><a href="{{route('admin.car.edit',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm">Edit</a></td>
+              <td><a href="{{route('admin.car.edit',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm">Update</a></td>
               <td><a href="{{route('admin.car.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm" onclick="return confirm('Deleted !!! Are u sure ')">Delete</a></td>
-              <td><a href="{{route('admin.car.show',['id'=>$rs->id])}}" class="btn btn-block btn-warning btn-sm">Show</a></td>
             </tr>
             @endforeach
           </tbody>
@@ -89,9 +61,3 @@
       </ul>
     </div>
 
-@endsection
-
-
-@section('foot')
-
-@endsection
