@@ -27,7 +27,6 @@
             <th>Year</th>
             <th>Fuel</th>
             <th>Gear</th>
-            <th>KM</th>
             <th>Motor Power</th>
             <th>detail</th>
             <th>Image</th>
@@ -50,7 +49,6 @@
               <td>{{$rs->year}}</td>
               <td>{{$rs->fuel}}</td>
               <td>{{$rs->gear}}</td>
-              <td>{{$rs->KM}}</td>
               <td>{{$rs->motor_power}}</td>
               <td>{{$rs->detail}}</td>
               <td>

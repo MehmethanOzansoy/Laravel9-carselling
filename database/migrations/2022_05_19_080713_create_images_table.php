@@ -10,6 +10,7 @@ return new class extends Migration
      * Run the migrations.
      *
      * @return void
+     * @return \Illuminate\Database\Schema\ForeignIdColumnDefinition
      */
     public function up()
     {

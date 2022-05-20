@@ -79,10 +79,6 @@
                                 <input type="text" class="form-control" name="gear" value="{{$data->gear}}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">KM</label>
-                                <input type="text" class="form-control" name="km" value="{{$data->km}}">
-                            </div>
-                            <div class="form-group">
                                 <label for="exampleInputEmail1">Motor Power</label>
                                 <input type="text" class="form-control" name="motor_power" value="{{$data->motor_power}}">
                             </div>

@@ -75,10 +75,6 @@
                                 <input type="text" class="form-control" name="gear" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">KM</label>
-                                <input type="text" class="form-control" name="km" placeholder="">
-                            </div>
-                            <div class="form-group">
                                 <label for="exampleInputEmail1">Motor Power</label>
                                 <input type="text" class="form-control" name="motor_power" placeholder="">
                             </div>

@@ -6,10 +6,9 @@
 
 <h3>{{$car->title}}</h3>
 <hr>
-<form role="form" action="{{route('admin.image.store',['cid'=>$car->id] )}}" method="post" enctype="multipart/form-data">
+<form role="form" action="{{route('admin.image.store',['cid'=>$car->id])}}" method="post" enctype="multipart/form-data">
   @csrf
   <div class="card-body">
-
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
       <input type="text" class="form-control" name="title" placeholder="Title">
@@ -47,15 +46,12 @@
           <td>{{$rs->title}}</td>
           <td>
             @if ($rs->image)
-            <img src="{{Storage::url($rs->image)}}" style="height: 40px">
+            <img src="{{Storage::url($rs->image)}}" style="height: 80px">
             @endif
 
           </td>
-
-          <td><img src="{{asset('assets')}}/admin/assets/images/Gallery.png" style="height: 40px"></td>
-          <td>{{$rs->status}}</td>
-          <td><a href="{{route('admin.car.edit',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm">Update</a></td>
-          <td><a href="{{route('admin.car.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm" onclick="return confirm('Deleted !!! Are u sure ')">Delete</a></td>
+          <td><a href="{{route('admin.image.update',['cid'=>$car->id,'id'=>$rs->id])}}" class="btn btn-block btn-success">Update</a></td>
+          <td><a href="{{route('admin.image.destroy',['cid'=>$car->id,'id'=>$rs->id])}}" class="btn btn-block btn-danger " onclick="return confirm('Deleted !!! Are u sure ')">Delete</a></td>
         </tr>
         @endforeach
         </thead>
@@ -63,9 +59,5 @@
   </div>
 </div>
 
-<!-- /.card-body -->
-
-
-<a href="{{route('admin.car.create')}}" class="btn btn-block btn-info">Add Image</a>
 
 @endsection

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Models\car;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -17,23 +19,14 @@ class ImageController extends Controller
     public function index($cid)
     {
         //
-        $car = car::find($cid);
-        $images = Image::where('car_id',$cid);
+        $car = Car::find($cid);
+        //$images = Image::where('car_id',$cid);//
+        $images = DB::table('images')->where('car_id',$cid)->get();
         return view('admin.image.index', [
 
             'car' => $car,
-            'images' => $images,
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create($cid)
-    {
-        //
+            'images' => $images
+        ]); 
     }
 
     /**
@@ -45,6 +38,16 @@ class ImageController extends Controller
     public function store(Request $request,$cid)
     {
         //
+        $data = new Image();
+        $data->car_id = $cid;
+        $data->title = $request->title;
+
+        if ($request->file('image')) {
+            $data->image = $request->file('image')->store('images');
+            
+        }
+        $data->save();
+        return redirect()->route('admin.image.index',['cid'=>$cid]);
     }
 
     /**
@@ -79,6 +82,13 @@ class ImageController extends Controller
     public function update(Request $request,$cid ,$id)
     {
         //
+        $data = car::find($id);
+        if ($request->file('image')) {
+            $data->image = $request->file('image')->store('images');
+        }
+        $data->save();
+        return redirect('admin/image');
+   
     }
 
     /**
@@ -90,5 +100,13 @@ class ImageController extends Controller
     public function destroy($cid,$id)
     {
         //
+        $data = Image::find($id);
+        if ($data->image && Storage::disk('public')->exists($data->image)) {
+            // ...
+            Storage::delete($data->image);
+        }
+        $data->delete();
+        
+        return redirect()->route('admin.image.index',['cid'=>$cid]);
     }
 }
