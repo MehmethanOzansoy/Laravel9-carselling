@@ -66,12 +66,16 @@
                                     <td>{{$data->gear}}</td>
                                 </tr>
                                 <tr>
+                                    <th>KM</th>
+                                    <td>{{$data->km}}</td>
+                                </tr>
+                                <tr>
                                     <th>Motor Power</th>
                                     <td>{{$data->motor_power}}</td>
                                 </tr>
                                 <tr>
                                     <th>Detail Info</th>
-                                    <td>{{$data->detail}}</td>
+                                    <td>{!! $data->detail !!}</td>
                                 </tr>
 
                                 <tr>

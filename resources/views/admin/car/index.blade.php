@@ -28,7 +28,7 @@
             <th>Fuel</th>
             <th>Gear</th>
             <th>Motor Power</th>
-            <th>detail</th>
+            <th>KM</th>
             <th>Image</th>
             <th>Image Gallery</th>
             <th>Status</th>
@@ -50,7 +50,7 @@
               <td>{{$rs->fuel}}</td>
               <td>{{$rs->gear}}</td>
               <td>{{$rs->motor_power}}</td>
-              <td>{{$rs->detail}}</td>
+              <td>{{$rs->km}}</td>
               <td>
                 @if ($rs->image)
                 <img src="{{Storage::url($rs->image)}}" style="height: 40px">

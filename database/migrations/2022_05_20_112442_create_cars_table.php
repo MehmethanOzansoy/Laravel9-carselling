@@ -27,7 +27,8 @@ return new class extends Migration
             $table->integer('year')->nullable();
             $table->string('fuel')->nullable();
             $table->string('gear')->nullable();
-            $table->string('detail')->nullable();
+            $table->string('KM')->nullable();
+            $table->text('detail')->nullable();
             $table->string('motor_power')->nullable();
             $table->string('status',6);
             $table->timestamps();

@@ -83,6 +83,10 @@
                                 <input type="text" class="form-control" name="motor_power" value="{{$data->motor_power}}">
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputEmail1">KM</label>
+                                <input type="text" class="form-control" name="km" placeholder="">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Detail Info</label>
                                 <textarea class="form-control" name="detail">
                                 "{{$data->detail}}"
