@@ -26,14 +26,11 @@
 <body>
   
 @include('home.menu')
- 
-@section('slider')
-     @include('home.slider')
-@show
+
+@include('home.slider')
 
 @yield('content')
-    
-     
+          
 @include('home.contact')
      
 @include('home.footer')

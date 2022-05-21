@@ -2,6 +2,12 @@
 
  @section('title', 'Car Selling')
 
+ @section('slider')
+
+    @include('home.slider')
+
+ @endsection
+
 
  @section('content')
  <main>
@@ -11,7 +17,7 @@
              <div class="row">
                  <div class="col-md-12 col-sm-12">
                      <div class="section-title text-center">
-                         <h2>Featured Cars <small>Lorem ipsum dolor sit amet.</small></h2>
+                         <h2>Öne Çıkan Arabalar <small>New thinking new possibilities</small></h2>
                      </div>
                  </div>
                  @foreach($carlist1 as $rs)  
@@ -31,7 +37,7 @@
                          <div class="courses-detail">
                              <h3><a href="car-details.html">{{$rs->modal}}</a></h3>
 
-                             <p class="lead"><small><del>{{$rs->price}}</del></small> <strong>{{$rs->price *1.12}}</strong></p>
+                             <p class="lead"><small><del>{{$rs->price *1.12}}₺</del></small> <strong>{{$rs->price}}₺</strong></p>
 
                              <p>{{$rs->motor_power}} &nbsp;&nbsp;/&nbsp;&nbsp; {{$rs->fuel}} &nbsp;&nbsp;/&nbsp;&nbsp; {{$rs->year}} &nbsp;&nbsp;/&nbsp;&nbsp; {{$rs->brand}}</p>
                          </div>

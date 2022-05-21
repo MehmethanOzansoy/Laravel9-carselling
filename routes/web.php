@@ -31,6 +31,9 @@ Route::get('/', function () {
 
 Route::get('/',[HomeController::class,'index']) -> name('home');
 
+Route::get('/car/{id}',[HomeController::class,'car']) -> name('car');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

@@ -17,4 +17,12 @@ class HomeController extends Controller
             'carlist1' =>$carlist1
         ]);
     }
+
+    public function car($id)
+    {
+        $data = Car::find($id);
+        return view('home.car',[
+            'data' =>$data
+        ]);
+    }
 }
