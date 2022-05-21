@@ -88,7 +88,6 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Detail Info</label>
                                 <textarea class="form-control" id="detail" name="detail">
-                                "{!! $data->detail !!}"
                                 </textarea>
                                 <script>
                                     ClassicEditor

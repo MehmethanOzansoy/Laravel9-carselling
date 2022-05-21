@@ -8,6 +8,10 @@
   
      <p>This is appended from sub file.</p>
  @endsection
+
+ @section('slider')
+    @include('home.slider')
+ @endsection
   
  @section('content')
      <p>This is my body content.</p>
