@@ -32,8 +32,7 @@
 @show
 
 @yield('content')
-     
-@include('home.header')
+    
      
 @include('home.contact')
      
