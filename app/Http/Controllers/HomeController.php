@@ -22,7 +22,8 @@ class HomeController extends Controller
     {
         $data = Car::find($id);
         return view('home.car',[
-            'data' =>$data
+            'data' =>$data  
         ]);
     }
+
 }

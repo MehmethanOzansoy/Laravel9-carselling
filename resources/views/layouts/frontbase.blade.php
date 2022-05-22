@@ -27,14 +27,15 @@
   
 @include('home.menu')
 
-@include('home.slider')
+@section('slider')
+   
+@show
 
 @yield('content')
           
 @include('home.contact')
      
-@include('home.footer')
-
+<@include('home.footer')
 @yield('foot')
-    </body>
+</body>
 </html>
