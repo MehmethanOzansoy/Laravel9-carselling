@@ -7,7 +7,7 @@
                @foreach($sliderdata as $rs)  
                
                <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3512px, 0px, 0px); transition: all 0s ease 0s; width: 6146px;"><div class="owl-item cloned" style="width: 878px;">
-               <img src="{{Storage::url($rs->image)}}" style="width: 1920px; height: 700px">   
+               <img src="{{Storage::url($rs->image)}}">   
                <div class="caption">
                               <div class="container">
                               
