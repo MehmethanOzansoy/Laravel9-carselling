@@ -3,51 +3,37 @@
 @section('title',$data->title)
 
 @section('content')
- 
+
 <section>
-    <div id="breadcrumb">
-        <div class="container">
-            <ul class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Car</a></li>
-                <li><a href="#">{{$data->title}}</a></li>
-            </ul>
-        </div>
-    </div>
+     <div id="breadcrumb">
           <div class="container">
-               <div class="row">
-                    <div class="col-md-6 col-xs-12">
-                         <div>
-                              <img src="images/product-1-720x480.jpg" alt="" class="img-responsive wc-image">
+               <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Car</a></li>
+                    <li><a href="#">{{$data->title}}</a></li>
+               </ul>
+          </div>
+     </div>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-6 col-xs-12">
+                    <div>
+                         <img src="{{Storage::url($data->image)}}" alt="" class="img-responsive wc-image">
+                    </div>
+                    <br>
+
+                    <div class="row">
+                         @foreach($images as $rs)
+
+                         <div class="col-sm-4 col-xs-6">
+                              <div>
+                                   <img src="{{Storage::url($rs->image)}}" alt="" class="img-responsive">
+                              </div>
+
+                              <br>
                          </div>
 
-                         <br>
-
-                         <div class="row">
-                              <div class="col-sm-4 col-xs-6">
-                                   <div>
-                                        <img src="images/product-1-720x480.jpg" alt="" class="img-responsive">
-                                   </div>
-                                   
-                                   <br>
-                              </div>
-
-                              <div class="col-sm-4 col-xs-6">
-                                   <div>
-                                        <img src="images/product-2-720x480.jpg" alt="" class="img-responsive">
-                                   </div>
-                                   
-                                   <br>
-                              </div>
-
-                              <div class="col-sm-4 col-xs-6">
-                                   <div>
-                                        <img src="images/product-3-720x480.jpg" alt="" class="img-responsive">
-                                   </div>
-
-                                   <br>
-                              </div>
-                         </div>
+                         @endforeach
                     </div>
 
                     <div class="col-md-6 col-xs-12">
@@ -55,7 +41,7 @@
                               <h2>{{$data->brand}}</h2>
 
                               <p class="lead">{{$data->description}}</p>
-                              
+
                               <p class="lead"><small><del> {{$data->price*1.15}}₺</del></small> <strong class="text-primary">{{$data->price}}₺</strong></p>
 
                               <div class="row">
@@ -162,7 +148,7 @@
                               </div>
 
                               <div class="panel-body">
-                                   <p>{{$data->detail}}</p>
+                                   <p>{!!$data->detail !!}</p>
                               </div>
                          </div>
                     </div>
@@ -211,6 +197,6 @@
                     </div>
                </div>
           </div>
-     </section>
- 
+</section>
+
 @endsection

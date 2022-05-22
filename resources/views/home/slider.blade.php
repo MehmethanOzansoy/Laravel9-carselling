@@ -14,7 +14,7 @@
                                    
                                    <div class="col-md-6 col-sm-12">
                                         <h1>{{$rs->title}}</h1>
-                                        <a href="cars.html" class="section-btn btn btn-default">Browse Cars</a>
+                                        <a href="{{route('car',['id'=>$rs->id])}}    " class="section-btn btn btn-default">Browse Cars</a>
                                    </div>
                               
                               </div>
