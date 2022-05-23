@@ -24,7 +24,6 @@
 
                     <div class="row">
                          @foreach($images as $rs)
-
                          <div class="col-sm-4 col-xs-6">
                               <div>
                                    <img src="{{Storage::url($rs->image)}}" alt="" class="img-responsive">
@@ -35,111 +34,112 @@
 
                          @endforeach
                     </div>
-
-                    <div class="col-md-6 col-xs-12">
-                         <form action="#" method="post" class="form">
-                              <h2>{{$data->brand}}</h2>
-
-                              <p class="lead">{{$data->description}}</p>
-
-                              <p class="lead"><small><del> {{$data->price*1.15}}₺</del></small> <strong class="text-primary">{{$data->price}}₺</strong></p>
-
-                              <div class="row">
-                                   <div class="col-md-4 col-sm-6">
-                                        <p>
-                                             <span>Type</span>
-
-                                             <br>
-
-                                             <strong>{{$data->keywords}}</strong>
-                                        </p>
-                                   </div>
-
-                                   <div class="col-md-4 col-sm-6">
-                                        <p>
-                                             <span>Brand</span>
-
-                                             <br>
-
-                                             <strong>{{$data->brand}}</strong>
-                                        </p>
-                                   </div>
-
-                                   <div class="col-md-4 col-sm-6">
-                                        <p>
-                                             <span> Model</span>
-
-                                             <br>
-
-                                             <strong>{{$data->modal}}</strong>
-                                        </p>
-                                   </div>
-
-                                   <div class="col-md-4 col-sm-6">
-                                        <p>
-                                             <span>First registration</span>
-
-                                             <br>
-
-                                             <strong>{{$data->year}}</strong>
-                                        </p>
-                                   </div>
-
-                                   <div class="col-md-4 col-sm-6">
-                                        <p>
-                                             <span>Mileage</span>
-
-                                             <br>
-
-                                             <strong>5000 km</strong>
-                                        </p>
-                                   </div>
-
-                                   <div class="col-md-4 col-sm-6">
-                                        <p>
-                                             <span>Fuel</span>
-
-                                             <br>
-
-                                             <strong>{{$data->fuel}}</strong>
-                                        </p>
-                                   </div>
-
-                                   <div class="col-md-4 col-sm-6">
-                                        <p>
-                                             <span>Engine size</span>
-
-                                             <br>
-
-                                             <strong>{{$data->motor_power}}</strong>
-                                        </p>
-                                   </div>
-
-                                   <div class="col-md-4 col-sm-6">
-                                        <p>
-                                             <span>Power</span>
-
-                                             <br>
-
-                                             <strong>85 hp</strong>
-                                        </p>
-                                   </div>
-
-
-                                   <div class="col-md-4 col-sm-6">
-                                        <p>
-                                             <span>Gearbox</span>
-
-                                             <br>
-
-                                             <strong>Manual</strong>
-                                        </p>
-                                   </div>
-                              </div>
-                         </form>
-                    </div>
                </div>
+                   
+                    <div class="col-md-6 col-xs-12">
+                              <form action="#" method="post" class="form">
+                                   <h2>{{$data->brand}}</h2>
 
+                                   <p class="lead">{{$data->description}}</p>
+
+                                   <p class="lead"><small><del> {{$data->price*1.15}}₺</del></small> <strong class="text-primary">{{$data->price}}₺</strong></p>
+
+                                   <div class="row">
+                                        <div class="col-md-4 col-sm-6">
+                                             <p>
+                                                  <span>Type</span>
+
+                                                  <br>
+
+                                                  <strong>{{$data->keywords}}</strong>
+                                             </p>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-6">
+                                             <p>
+                                                  <span>Brand</span>
+
+                                                  <br>
+
+                                                  <strong>{{$data->brand}}</strong>
+                                             </p>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-6">
+                                             <p>
+                                                  <span> Model</span>
+
+                                                  <br>
+
+                                                  <strong>{{$data->modal}}</strong>
+                                             </p>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-6">
+                                             <p>
+                                                  <span>First registration</span>
+
+                                                  <br>
+
+                                                  <strong>{{$data->year}}</strong>
+                                             </p>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-6">
+                                             <p>
+                                                  <span>Mileage</span>
+
+                                                  <br>
+
+                                                  <strong>5000 km</strong>
+                                             </p>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-6">
+                                             <p>
+                                                  <span>Fuel</span>
+
+                                                  <br>
+
+                                                  <strong>{{$data->fuel}}</strong>
+                                             </p>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-6">
+                                             <p>
+                                                  <span>Engine size</span>
+
+                                                  <br>
+
+                                                  <strong>{{$data->motor_power}}</strong>
+                                             </p>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-6">
+                                             <p>
+                                                  <span>Power</span>
+
+                                                  <br>
+
+                                                  <strong>85 hp</strong>
+                                             </p>
+                                        </div>
+
+
+                                        <div class="col-md-4 col-sm-6">
+                                             <p>
+                                                  <span>Gearbox</span>
+
+                                                  <br>
+
+                                                  <strong>Manual</strong>
+                                             </p>
+                                        </div>
+                                   </div>
+                              </form>
+               </div>
+                    
+          </div>
                <div class="row">
                     <div class="col-lg-8 col-xs-12">
                          <div class="panel panel-default">

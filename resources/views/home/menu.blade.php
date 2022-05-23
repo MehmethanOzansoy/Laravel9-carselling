@@ -28,8 +28,11 @@
                          <li class="active"><a href="index.html">Home</a></li>
 						 <li><a href="cars.html">Cars</a></li>
                                <li><a href="about-us.html">About Us</a></li>
+                         
+                         <li><a href="contact.html">Contact Us</a></li>
+                         <li><a href="login.html">Login</a></li>
                          <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
                               
                               <ul class="dropdown-menu">
                                     <li><a href="blog-posts.html">Blog</a></li>
@@ -37,8 +40,6 @@
 			                         <li><a href="testimonials.html">Testimonials</a></li>
                               </ul>
                          </li>
-                         <li><a href="contact.html">Contact Us</a></li>
-                         <li><a href="login.html">Login</a></li>
                     </ul>
                </div>
 
