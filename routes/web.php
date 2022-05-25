@@ -45,6 +45,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         //********************** Admin Panel Routes*********************//
         Route::get('/',[AdminHomeController::class,'index']) -> name('index');
 
+         //********************** General Routes*********************//
+        Route::get('/',[AdminHomeController::class,'setting']) -> name('setting');
         //********************** Admin Catogory Routes*********************//
         Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
                 Route::get('/','index') -> name('index');
