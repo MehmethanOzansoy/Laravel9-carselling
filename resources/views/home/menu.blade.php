@@ -21,15 +21,34 @@
             @endphp
             <div class="collapse navbar-collapse">
                  <ul class="nav navbar-nav navbar-nav-first">
-                      <li class="active"><a href="index.html">Home</a></li>
+                      <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Category <i class="fa fa-list"></i></a>
+
+                           <ul class="dropdown-menu">
+                                @foreach($mainCategories as $rs)
+                                <li class="dropdown side-dropdown">
+                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">{{$rs->title}} <i class="fa fa-angle-right"></i></a>
+                                     <div class="custom-menu">
+                                          <div class="row">
+                                               <div class="col-md-4">
+                                                  <ul class="list-links">
+                                                       
+                                                            @if(count($rs->children))
+                                                                 @include('home.categorytree',['children' => $rs->children])
+                                                            @endif
+
+                                                  </ul>
+                                               </div>
+                                          </div>
+                                     </div>
+                                </li>
+                                @endforeach
+
+                           </ul>
+                      </li>
+                      <li><a href="index.html">Home</a></li>
                       <li><a href="cars.html">Cars</a></li>
                       <li><a href="about-us.html">About Us</a></li>
-                      @foreach($mainCategories as $rs)
-                         <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="true">{{$rs->title}} </a>
-                                   <div class="custom"></div>
-                         </li>
-                      @endforeach
                       <li><a href="contact.html">Contact Us</a></li>
                  </ul>
             </div>

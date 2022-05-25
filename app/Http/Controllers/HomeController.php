@@ -40,4 +40,19 @@ class HomeController extends Controller
         ]);
     }
 
+    public function categorycars($id)
+    {
+        echo "test:";
+        exit();
+        
+        $data = Car::find($id);
+        $images = DB::table('images')->where('car_id',$id)->get();
+
+        return view('home.car',[
+            'data' =>$data, 
+            'images' =>$images  
+
+        ]);
+    }
+
 }
