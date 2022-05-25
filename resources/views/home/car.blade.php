@@ -8,7 +8,7 @@
      <div id="breadcrumb">
           <div class="container">
                <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><a href="#">Car</a></li>
                     <li><a href="#">{{$data->title}}</a></li>
                </ul>

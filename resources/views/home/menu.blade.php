@@ -10,7 +10,7 @@
                  </button>
 
                  <!-- lOGO TEXT HERE -->
-                 <a href="#" class="navbar-brand">Car Dealer Website</a>
+                 <a href="{{route('home')}}" class="navbar-brand">Car Dealer Website</a>
             </div>
 
             <!-- MENU LINKS -->
@@ -46,7 +46,7 @@
 
                            </ul>
                       </li>
-                      <li><a href="index.html">Home</a></li>
+                      <li><a href="{{route('home')}}">Home</a></li>
                       <li><a href="cars.html">Cars</a></li>
                       <li><a href="about-us.html">About Us</a></li>
                       <li><a href="contact.html">Contact Us</a></li>

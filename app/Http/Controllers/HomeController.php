@@ -42,15 +42,14 @@ class HomeController extends Controller
 
     public function categorycars($id)
     {
-        echo "test:";
-        exit();
-        
-        $data = Car::find($id);
-        $images = DB::table('images')->where('car_id',$id)->get();
+       
 
-        return view('home.car',[
-            'data' =>$data, 
-            'images' =>$images  
+        $category = category::find($id);
+        $cars = DB::table('cars')->where('category_id',$id)->get();
+
+        return view('home.categorycar',[
+            'category' =>$category, 
+            'cars' =>$cars  
 
         ]);
     }
