@@ -31,7 +31,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/admin/commet" class="nav-link active">
+                        <a href="/admin/comment" class="nav-link active">
                             <ion-icon name="chatbubble-ellipses-outline"></ion-icon> Comments
                         </a>
                     </li>
@@ -43,7 +43,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/admin/messages" class="nav-link active">
+                        <a href="{{route('admin.message.index')}}" class="nav-link active">
                             <ion-icon name="mail-open-outline"></ion-icon> Messages
                         </a>
                     </li>

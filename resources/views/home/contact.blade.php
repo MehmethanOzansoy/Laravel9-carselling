@@ -17,13 +17,14 @@
           </ul>
      </div>
 </div>
-
+ 
 <section id="contact">
      <div class="container">
           <div class="row">
-
                <div class="col-md-6 col-sm-12">
-                    <form id="contact-form" role="form" action="" method="post">
+               @include('home.messages') 
+                    <form id="contact-form" role="form" action="{{route('storemessage')}}" method="post">
+                         @csrf
                          <div class="section-title">
                               <h2>Contact us <small>we love conversations. let us talk!</small></h2>
                          </div>
@@ -33,7 +34,12 @@
 
                               <input type="email" class="form-control" placeholder="Enter email address" name="email" required>
 
+                              <input type="tel" class="form-control" placeholder="Phone number" name="phone" required>
+
+                              <input type="text" class="form-control" placeholder="Enter subject" name="subject" required>
+                         
                               <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required></textarea>
+
                          </div>
 
                          <div class="col-md-4 col-sm-12">
