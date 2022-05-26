@@ -1,7 +1,7 @@
 @extends('layouts.frontbase')
 
 
-@section('title', $setting->title)
+@section('title',$setting->title)
 
 @section('description', $setting->description)
 

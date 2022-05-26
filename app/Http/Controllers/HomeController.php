@@ -6,6 +6,7 @@ use App\Models\Car;
 use App\Models\Setting;
 use App\Models\Message;
 use App\Models\Category;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -45,15 +46,30 @@ class HomeController extends Controller
     }
     public function contact()
     {
-       
+
         $setting= Setting::first();
 
         return view('home.contact',[
 
             'setting'=>$setting,
+        ]);
+    }
+
+    public function faq()
+    {
+       
+        $setting= Setting::first();
+        $datalist= Faq::all();
+
+        return view('home.faq',[
+
+            'setting'=>$setting,
+            'datalist'=>$datalist
+
 
         ]);
     }
+
     public function references()
     {
        
