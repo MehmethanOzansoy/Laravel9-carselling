@@ -3,6 +3,11 @@
 <head>
 
      <title>@yield("title")</title>
+     <meta name="description" content="@yield("description")">
+     <meta name="keywords" content="@yield("description")">
+     <meta name="author" content="Mehmet Han Ozansoy">
+     <link rel="icon" type="image/x-icon" href="@yield("icon")">
+
 
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">

@@ -6,11 +6,6 @@
 
 <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
-<script>
-
-    
-</script>
-
 @endsection
 
 
@@ -62,9 +57,9 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="form-group">
-                                <form action="">
+                                    <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
                                     <label>Title</label>
-                                    <input type="text" name="titke" value="{{$data->title}}" data-parsley-trigger="change" required=""  autocomplete="off" class="form-control">
+                                    <input type="text" name="title" value="{{$data->title}}" data-parsley-trigger="change" required=""  autocomplete="off" class="form-control">
                                     <label>Keywords</label>
                                     <input type="text" name="keywords" value="{{$data->keywords}}" data-parsley-trigger="change" required=""  autocomplete="off" class="form-control">
                                     <label>Description</label>
@@ -94,12 +89,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>                                
                             </div>
-                            <a href="#" class="btn btn-secondary">Update</a>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <form action="">
+                                    <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
                                     <label>Smtp Server</label>
                                     <input type="text" name="smtpserver" value="{{$data->smtpserver}}" data-parsley-trigger="change" required=""  autocomplete="off" class="form-control">
                                     <label>Smtp Email</label>
@@ -109,10 +103,9 @@
                                     <label>Smtpport</label>
                                     <input type="number" name="smtpport" value="{{$data->smtpport}}" data-parsley-trigger="change" required=""  autocomplete="off" class="form-control">
                                 </form>      
-                                <a href="#" class="btn btn-secondary">Update</a>              
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                <form action="">
+                                    <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
                                     <label for="inputUserName">Fax</label>
                                     <input type="text" name="fax" value="{{$data->fax}}" data-parsley-trigger="change" required=""  autocomplete="off" class="form-control">
                                     <label for="inputEmail">Facebook</label>
@@ -123,25 +116,22 @@
                                     <input type="text" name="twitter" value="{{$data->twitter}}" data-parsley-trigger="change" required=""  autocomplete="off" class="form-control">
                                     <label for="inputEmail">Youtube</label>
                                     <input type="text" name="youtube" value="{{$data->youtube}}" data-parsley-trigger="change" required=""autocomplete="off" class="form-control">
-                                </form>           
-                                <a href="#" class="btn btn-secondary">Update</a>   
                         </div>
 
                         <div class="tab-pane fade" id="aboutus" role="tabpanel" aria-labelledby="contact-tab">
                                 <div class="form-group">
+                                        <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
                                         <label for="exampleInputEmail1">About Us</label>
-                                        <textarea class="form-control" id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
-                                    <a href="#" class="btn btn-secondary">Update</a>
-
+                                        <textarea class="form-control" id="aboutus" name="aboutus">{{$data->aboutus}}</textarea> 
                                 </div>
 
                         </div>
             
                         <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="contact-tab">
                                 <div class="form-group">
+                                        <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
                                         <label for="exampleInputEmail1">Contact Us</label>
                                         <textarea class="form-control" id="social" name="social">{{$data->contactus}}</textarea>
-                                    <a href="#" class="btn btn-secondary">Update</a>
 
                                 </div>
                         </div>
@@ -151,7 +141,11 @@
                                         <label for="exampleInputEmail1">References</label>
                                         <textarea class="form-control" id="references" name="references">{{$data->references}}</textarea>
                                 </div>
-                                <a href="#" class="btn btn-secondary">Update</a>
+                        </div>
+
+                        <div class="card-footer">
+
+                                <button type="submit" class="btn btn-primary">Update Settings</button>
                         </div>
                     
                     </div>
@@ -165,8 +159,13 @@
 @endsection
 
 @section('foot')
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+ <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script>
+             $(document).ready(function() {
+               $('#aboutus').summernote();
+               $('#social').summernote();
+               $('#references').summernote();
 
-
-@endsection()
-
+        });
+    </script>
+@endsection

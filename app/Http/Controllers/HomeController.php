@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Setting;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,8 +22,11 @@ class HomeController extends Controller
         $page='home';
         $sliderdata=Car::limit(2)->get();
         $carlist1=Car::limit(6)->get();
+        $setting= Setting::first();
+
         return view('home.index',[
             'page'=>$page,
+            'setting'=>$setting,
             'sliderdata' =>$sliderdata,
             'carlist1' =>$carlist1
         ]);
