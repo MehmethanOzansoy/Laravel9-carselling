@@ -37,7 +37,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/admin/faq" class="nav-link active">
+                        <a href="{{route('admin.faq.index')}}" class="nav-link active">
                             <ion-icon name="help-outline"></ion-icon> FAQ
                         </a>
                     </li>

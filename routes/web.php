@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\AdminCarController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
 
@@ -85,7 +86,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
                 Route::get('/update/{cid}/{id}','update') -> name('update');
                 Route::get('/destroy/{cid}/{id}','destroy') -> name('destroy');
         
-        });
+            });
 
         //************************ Admin Message Routes ********************//
         Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function () {
@@ -96,6 +97,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
     });
+        //************************ Admin FAQ Routes ********************//
+            Route::prefix('/faq')->name('faq.')->controller(FaqController::class)->group(function () {
+                Route::get('/','index') -> name('index');
+                Route::get('/create','create') -> name('create');
+                Route::post('/store','store') -> name('store');
+                Route::get('/edit/{id}','edit') -> name('edit');
+                Route::post('/update/{id}','update') -> name('update');
+                Route::get('/destroy/{id}','destroy') -> name('destroy');
+                Route::get('/show/{id}','show') -> name('show');
+        });
         
 });
 ?>
