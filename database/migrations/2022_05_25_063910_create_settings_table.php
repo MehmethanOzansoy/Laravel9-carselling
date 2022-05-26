@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('company',150)->nullable();
-            $table->string('Adress',150)->nullable();
+            $table->string('address',150)->nullable();
             $table->string('phone',20)->nullable();
             $table->string('fax',20)->nullable();
             $table->string('email',75)->nullable();
@@ -34,7 +34,7 @@ return new class extends Migration
             $table->text('aboutus')->nullable();
             $table->text('contact')->nullable();
             $table->text('references')->nullable();
-            $table->string('icon',50)->nullable();
+            $table->string('icon',100)->nullable();
             $table->string('status',5)->nullable()->nullable()->default('false');
             $table->timestamps();
             
