@@ -4,10 +4,9 @@
 
 @section('head')
 
-<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+ <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 
-@endsection
-
+@endsection()
 
 @section('content')
 <div class="dashboard-wrapper">
@@ -42,13 +41,13 @@
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Smtp Email</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Social Media</a>
+                            <a class="nav-link" id="social-tab" data-toggle="tab" href="#social" role="tab" aria-controls="social" aria-selected="false">Social Media</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="aboutus-tab" data-toggle="tab" href="#aboutus" role="tab" aria-controls="aboutus" aria-selected="false">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="social-tab" data-toggle="tab" href="#social" role="tab" aria-controls="social" aria-selected="false">Contact Page</a>
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact Page</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="references-tab" data-toggle="tab" href="#references" role="tab" aria-controls="references" aria-selected="false">References</a>
@@ -104,7 +103,7 @@
                                     <input type="number" name="smtpport" value="{{$data->smtpport}}" data-parsley-trigger="change" required=""  autocomplete="off" class="form-control">
                                 </form>      
                         </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
                                     <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
                                     <label for="inputUserName">Fax</label>
                                     <input type="text" name="fax" value="{{$data->fax}}" data-parsley-trigger="change" required=""  autocomplete="off" class="form-control">
@@ -119,29 +118,60 @@
                         </div>
 
                         <div class="tab-pane fade" id="aboutus" role="tabpanel" aria-labelledby="contact-tab">
-                                <div class="form-group">
-                                        <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
-                                        <label for="exampleInputEmail1">About Us</label>
-                                        <textarea class="form-control" id="aboutus" name="aboutus">{{$data->aboutus}}</textarea> 
-                                </div>
-
+                            <div class="form-group">
+                                <label>About Us</label>
+                                <textarea id="editor" name="aboutus"  >{{ $data->aboutus }}</textarea>
+                                <script>
+                                    ClassicEditor
+                                            .create( document.querySelector( '#editor' ) )
+                                            .then( editor => {
+                                                    console.log( editor );
+                                            } )
+                                            .catch( error => {
+                                                    console.error( error );
+                                            } );
+                                </script>
+                            
+                                
+                            </div>
                         </div>
-            
-                        <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="contact-tab">
-                                <div class="form-group">
-                                        <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
-                                        <label for="exampleInputEmail1">Contact Us</label>
-                                        <textarea class="form-control" id="social" name="social">{{$data->contactus}}</textarea>
 
-                                </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="form-group">
+                                <label> Contact Us </label>
+                                <textarea class="form-control" id="detail" name="contact">{{ $data->contact }}</textarea>
+                                <script >
+                                    ClassicEditor
+                                            .create( document.querySelector( '#detail' ) )
+                                            .then( editor => {
+                                                    console.log( editor );
+                                            } )
+                                            .catch( error => {
+                                                    console.error( error );
+                                            } );
+                                </script>
+
+                               
+                            </div>
                         </div>
-                        
                         <div class="tab-pane fade" id="references" role="tabpanel" aria-labelledby="contact-tab">
-                                <div class="form-group">
-                                        <label for="exampleInputEmail1">References</label>
-                                        <textarea class="form-control" id="references" name="references">{{$data->references}}</textarea>
-                                </div>
+
+                            <div class="form-group">
+                                <label>References</label>
+                                <textarea class="form-control" id="test" name="references">{{$data->references}}</textarea>     
+                                <script >
+                                    ClassicEditor
+                                            .create( document.querySelector( '#test' ) )
+                                            .then( editor => {
+                                                    console.log( editor );
+                                            } )
+                                            .catch( error => {
+                                                    console.error( error );
+                                            } );
+                                </script>       
+                            </div>
                         </div>
+                               
 
                         <div class="card-footer">
 
@@ -158,14 +188,5 @@
 
 @endsection
 
-@section('foot')
- <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-    <script>
-             $(document).ready(function() {
-               $('#aboutus').summernote();
-               $('#social').summernote();
-               $('#references').summernote();
 
-        });
-    </script>
-@endsection
+

@@ -37,9 +37,7 @@
 @show
 
 @yield('content')
-          
-@include('home.contact')
-     
+
 <@include('home.footer')
 @yield('foot')
 </body>

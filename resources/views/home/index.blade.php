@@ -240,7 +240,7 @@
                                  <div class="row">
                                      <div class="col-md-12 col-sm-12">
                                          <div class="text-center">
-                                             <h2>About us</h2>
+                                             <h2>Gelişmeler</h2>
 
                                              <br>
 

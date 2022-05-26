@@ -15,7 +15,9 @@
     </div>
 </div>
 
+
 <script src="{{asset('assets')}}/admin/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
 <script src="{{asset('assets')}}/admin/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 <script src="{{asset('assets')}}/admin/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
 <script src="{{asset('assets')}}/admin/assets/libs/js/main-js.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>

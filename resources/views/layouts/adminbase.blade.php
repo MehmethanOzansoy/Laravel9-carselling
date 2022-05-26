@@ -11,6 +11,8 @@
     <link href="{{asset('assets')}}/admin/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/libs/css/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+   
+
     
     @yield("head")
 
@@ -26,8 +28,8 @@
 
  @yield('content')
  
- 
- <@include("admin.footer")
+
+ @include("admin.footer")
 
  @yield('foot')
  

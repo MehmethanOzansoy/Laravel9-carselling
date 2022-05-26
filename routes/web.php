@@ -30,6 +30,10 @@ Route::get('/', function () {
 
 
 Route::get('/',[HomeController::class,'index']) -> name('home');
+Route::get('/about',[HomeController::class,'about']) -> name('about');
+Route::get('/contact',[HomeController::class,'contact']) -> name('contact');
+Route::get('/references',[HomeController::class,'references']) -> name('references');
+
 
 Route::get('/car/{id}',[HomeController::class,'car']) -> name('car');
 
@@ -44,6 +48,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::prefix('admin')->name('admin.')->group(function () {
         //********************** Admin Panel Routes*********************//
         Route::get('/',[AdminHomeController::class,'index']) -> name('index');
+        
 
          //********************** General Routes*********************//
         Route::get('/setting',[AdminHomeController::class,'setting']) -> name('setting');
