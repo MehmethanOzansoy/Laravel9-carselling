@@ -5,10 +5,15 @@
             <div class="topbar">
                  <div class="container">
                       <div class="row">
+                         
    
                       </div> <!-- .row -->
+                      
                  </div> <!-- .container -->
+               
             </div> <!-- .topbar -->
+               
+          
 
             <div class="navbar-header">
                  <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -54,12 +59,28 @@
 
                            </ul>
                       </li>
+                      
                       <li><a href="{{route('home')}}">Home</a></li>
                       <li><a href="{{route('about')}}">About Us</a></li>
                       <li><a href="{{route('faq')}}">FAQ</a></li>
                       <li><a href="{{route('contact')}}">Contact Us</a></li>
                       <li><a href="{{route('references')}}">References</a></li>
-                      <li><a href="">Login / Register</a></li>
+                      @guest
+                         <li><a href="/loginuser">Login </a></li>
+                      @endguest
+                      <li><a href="/registeruser">Register </a></li>
+                      <li class="header-account dropdown default-dropdown">
+                      @auth
+                      <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}  <i class="fa fa-user-o"></i> <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                   <a href="/logoutuser" class="text-uppercase">Logout </a>
+                              </ul>
+                         </li>
+
+                      </li>
+                      @endauth
+                      
 
                  </ul>
             </div>

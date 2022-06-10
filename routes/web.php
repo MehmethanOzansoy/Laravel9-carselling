@@ -40,6 +40,11 @@ Route::get('/references',[HomeController::class,'references']) -> name('referenc
 Route::post('/storemessage',[HomeController::class,'storemessage']) -> name('storemessage');
 Route::get('/faq',[HomeController::class,'faq']) -> name('faq');
 Route::post('/storecomment',[HomeController::class,'storecomment']) -> name('storecomment');
+Route::view('/loginuser','home.login');
+Route::view('/registeruser','home.register');
+Route::get('/logoutuser',[HomeController::class,'logout']) -> name('logoutuser');
+
+
 
 
 
