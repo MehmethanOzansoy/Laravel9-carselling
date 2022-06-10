@@ -1,6 +1,14 @@
   <!-- MENU -->
+
   <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
        <div class="container">
+            <div class="topbar">
+                 <div class="container">
+                      <div class="row">
+   
+                      </div> <!-- .row -->
+                 </div> <!-- .container -->
+            </div> <!-- .topbar -->
 
             <div class="navbar-header">
                  <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,13 +39,13 @@
                                      <div class="custom-menu">
                                           <div class="row">
                                                <div class="col-md-4">
-                                                  <ul class="list-links">
-                                                       
-                                                            @if(count($rs->children))
-                                                                 @include('home.categorytree',['children' => $rs->children])
-                                                            @endif
+                                                    <ul class="list-links">
 
-                                                  </ul>
+                                                         @if(count($rs->children))
+                                                         @include('home.categorytree',['children' => $rs->children])
+                                                         @endif
+
+                                                    </ul>
                                                </div>
                                           </div>
                                      </div>
@@ -51,6 +59,7 @@
                       <li><a href="{{route('faq')}}">FAQ</a></li>
                       <li><a href="{{route('contact')}}">Contact Us</a></li>
                       <li><a href="{{route('references')}}">References</a></li>
+                      <li><a href="">Login / Register</a></li>
 
                  </ul>
             </div>

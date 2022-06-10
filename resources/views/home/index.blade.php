@@ -11,7 +11,7 @@
 
  @section('slider')
 
-    @include('home.slider')
+ @include('home.slider')
 
  @endsection
 
@@ -27,7 +27,7 @@
                          <h2>Öne Çıkan Arabalar <small>New thinking new possibilities</small></h2>
                      </div>
                  </div>
-                 @foreach($carlist1 as $rs)  
+                 @foreach($carlist1 as $rs)
                  <div class="col-md-4 col-sm-4">
                      <div class="courses-thumb courses-thumb-secondary">
                          <div class="courses-top">
@@ -35,7 +35,7 @@
                                  <img src="{{Storage::url($rs->image)}}" class="img-responsive" alt="">
                              </div>
                              <div class="courses-date">
-                                <span title="Author"><i class="fa fa-dashboard"></i> {{$rs->title}}</span>
+                                 <span title="Author"><i class="fa fa-dashboard"></i> {{$rs->title}}</span>
                                  <span title="Author"><i class="fa fa-cube"></i>{{$rs->motor_power}}</span>
                                  <span title="Views"><i class="fa fa-cog"></i> {{$rs->gear}}</span>
                              </div>
@@ -54,7 +54,7 @@
                          </div>
                      </div>
                  </div>
-                @endforeach
+                 @endforeach
              </div>
          </div>
      </section>
@@ -228,7 +228,7 @@
                              </div>
                          </div>
 
-                       
+
 
                      </div>
                  </div>
@@ -236,24 +236,24 @@
          </div>
      </section>
      <section>
-                             <div class="container">
-                                 <div class="row">
-                                     <div class="col-md-12 col-sm-12">
-                                         <div class="text-center">
-                                             <h2>Gelişmeler</h2>
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-12 col-sm-12">
+                     <div class="text-center">
+                         <h2>Gelişmeler</h2>
 
-                                             <br>
+                         <br>
 
-                                             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore molestias
-                                                 ipsa veritatis nihil iusto maiores natus dolor, a reiciendis corporis obcaecati ex.
-                                                 Totam assumenda impedit aut eum, illum distinctio saepe explicabo.
-                                                 Consequuntur molestiae similique id quos, quasi quas perferendis laboriosam,
-                                                 fugit natus odit totam! Id dolores saepe, sint debitis rerum dolorem tempora aliquid,
-                                                 pariatur enim nisi. Quia ab iusto assumenda.</p>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </section>
+                         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore molestias
+                             ipsa veritatis nihil iusto maiores natus dolor, a reiciendis corporis obcaecati ex.
+                             Totam assumenda impedit aut eum, illum distinctio saepe explicabo.
+                             Consequuntur molestiae similique id quos, quasi quas perferendis laboriosam,
+                             fugit natus odit totam! Id dolores saepe, sint debitis rerum dolorem tempora aliquid,
+                             pariatur enim nisi. Quia ab iusto assumenda.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
  </main>
  @endsection
