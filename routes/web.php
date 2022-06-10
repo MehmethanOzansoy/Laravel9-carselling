@@ -1,11 +1,12 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminPanel\AdminCarController;
-use App\Http\Controllers\AdminPanel\MessageController;
-use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\FaqController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\CommentController;
+use App\Http\Controllers\AdminPanel\MessageController;
+use App\Http\Controllers\AdminPanel\AdminCarController;
+use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
 
@@ -128,7 +129,18 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/destroy/{id}','destroy') -> name('destroy');
 
 
-});
+        });
+             //************************ Admin User Routes ********************//
+             Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function () {
+                Route::get('/','index') -> name('index');
+                Route::get('/edit/{id}','edit') -> name('edit');
+                Route::post('/show/{id}','show') -> name('show');
+                Route::post('/update/{id}','update') -> name('update');
+                Route::get('/destroy/{id}','destroy') -> name('destroy');
+    
+    
+            });
+            
         
 });
 ?>
