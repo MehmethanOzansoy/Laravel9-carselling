@@ -48,10 +48,27 @@
 
                              <p>{{$rs->motor_power}} &nbsp;&nbsp;/&nbsp;&nbsp; {{$rs->fuel}} &nbsp;&nbsp;/&nbsp;&nbsp; {{$rs->year}} &nbsp;&nbsp;/&nbsp;&nbsp; {{$rs->brand}}</p>
                          </div>
+                         @php
 
+                         $average = $rs->comment->average('rate');
+
+                         @endphp
+                         {{number_format($average,2)}}
+                         <div class="col-md-4 col-sm-4">
+                            <div class="tst-rating">
+                                <i class="fa fa-star @if ($average<1) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($average<2) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($average<3) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($average<4) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($average<5) -o empty @endif"></i>
+                            </div>
+                         </div>
+
+                         /{{$rs->comment->count('id')}}
                          <div class="courses-info">
                              <a href="{{route('car',['id'=>$rs->id])}}" class="section-btn btn btn-primary btn-block">View More</a>
                          </div>
+
                      </div>
                  </div>
                  @endforeach

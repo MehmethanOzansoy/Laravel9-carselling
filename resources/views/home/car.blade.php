@@ -4,6 +4,7 @@
 
 @section('content')
 
+
 <section>
      <div id="breadcrumb">
           <div class="container">
@@ -41,6 +42,24 @@
                          <h2>{{$data->brand}}</h2>
 
                          <p class="lead">{{$data->description}}</p>
+
+                         @php
+
+                              $average = $data->comment->average('rate');
+
+                         @endphp
+                         {{number_format($average,2)}}
+
+                         <div class="tst-rating">
+                                     <i class="fa fa-star @if ($average<1) -o empty @endif"></i>
+                                     <i class="fa fa-star @if ($average<2) -o empty @endif"></i>
+                                     <i class="fa fa-star @if ($average<3) -o empty @endif"></i>
+                                     <i class="fa fa-star @if ($average<4) -o empty @endif"></i>
+                                     <i class="fa fa-star @if ($average<5) -o empty @endif"></i>
+                         </div>
+                        
+                         <a href="#"> {{$data->comment->count('id')}} / {{number_format($average,2)}}  Review(s) / Add Review </a>
+
 
                          <p class="lead"><small><del> {{$data->price*1.15}}₺</del></small> <strong class="text-primary">{{$data->price}}₺</strong></p>
 
@@ -199,7 +218,7 @@
                     <div class="panel panel-default">
                        
                          <div class="panel-heading">
-                              <h4>WRITE YOUR REVIEW</h4>
+                              <h3>WRITE YOUR REVIEW</h3>
                          </div>
                          <form action="{{route('storecomment')}}" class="review-form" method="post">
                               @csrf
