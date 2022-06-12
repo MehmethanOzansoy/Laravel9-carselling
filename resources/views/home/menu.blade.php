@@ -74,12 +74,21 @@
                       <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}  <i class="fa fa-user-o"></i> <span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                   <a href="/logoutuser" class="text-uppercase">Logout </a>
+                                   <a href="/logoutuser" class="text-uppercase"> Logout </a>
+                                   <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user-o"></i> My Account</a></li>
+                                   <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
+                                   <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
+                                   <li><a href="#"><i class="fa fa-check"></i> Checkouth</a></li>
+                                   <li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
+                                   <li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+
                               </ul>
                          </li>
 
+
                       </li>
                       @endauth
+                    
                       
 
                  </ul>
