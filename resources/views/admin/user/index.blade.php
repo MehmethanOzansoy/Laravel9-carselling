@@ -43,7 +43,7 @@
                   </td>
                   <td>{{$rs->status}}</td>
                   <td>
-                    <a href="{{route('admin.message.show',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm" 
+                    <a href="{{route('admin.user.show',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm" 
                         onclick="return !window.open(this.href,' ','top=50 left=100 width=1100,height=700')">
                         Show
                     </a>
@@ -51,10 +51,10 @@
                   
                   </td>
               
-                  <td><a href="{{route('admin.message.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm" onclick="return confirm('Deleted !!! Are u sure ')">Delete</a></td>
+                  <td><a href="{{route('admin.user.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm" onclick="return confirm('Deleted !!! Are u sure ')">Delete</a></td>
                   
                 </tr>
-                @endforeach
+          @endforeach
 
             </tr>
            

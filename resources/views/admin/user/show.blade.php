@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Show Category: '.$data->title)
+@section('title', 'User Detail ')
 
 
 @section('content')
@@ -10,18 +10,10 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm">
-                        <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Show Category</li>
-                    </ol>
-
-                </div>
-
                 <section class="content">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Detail Data</h3>
+                            <h3 class="card-title">Detail User Data</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
@@ -32,23 +24,27 @@
                                 </tr>
 
                                 <tr>
-                                    <th>Title</th>
-                                    <td>{{$data->title}}</td>
+                                    <th>Name & Surname</th>
+                                    <td>{{$data->name}}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Keyword</th>
-                                    <td>{{$data->keywords}}</td>
+                                    <th>Email</th>
+                                    <td>{{$data->email}}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Image</th>
-                                    <td></td>
-                                </tr>
+                                    <th>Roles</th>
+                                    <td>
+                                        @foreach($data->roles as $role)
 
-                                <tr>
-                                    <th>Status</th>
-                                    <td>{{$data->status}}</td>
+                                            {{$role->name}}
+                                            <a href="{{route('admin.user.destroyrole',['uid'=>$data->id ,'rid'=>$role->id  ])}}" 
+                                                 onclick="return confirm('Deleted !!! Are u sure ')">[x]</a>
+
+                                        @endforeach
+
+                                    </td>
                                 </tr>
 
                                 <tr>
@@ -67,16 +63,26 @@
                     </div>
 
                 </section>
-                <div class="row">
+                            <tr>
+                                <th>Add Role to User</th>
+                                <td>
+                                    <form role="form" action="{{route('admin.user.addrole',['id'=>$data->id])}}" method="post">
+                                        @csrf
+                                        <select name="role_id">
+                                            @foreach($roles as $role)
 
-                    <div class="col-sm-1">
-                        <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-block btn-info" style="width: 100px">Edit</a>
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" onclick="return confirm('Deleted !!! Are u sure ')" class="btn btn-block btn-danger" style="width: 100px">Delete</a>
-                    </div>
+                                             <option value="{{$role->id}}">{{$role->name}}</option>
 
-                </div>
+                                            @endforeach
+
+                                        </select>
+
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-primary">Add Role</button>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
 
 
             </div>
