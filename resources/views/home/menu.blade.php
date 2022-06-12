@@ -40,11 +40,10 @@
                            <ul class="dropdown-menu">
                                 @foreach($mainCategories as $rs)
                                 <li class="dropdown side-dropdown">
-                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">{{$rs->title}} <i class="fa fa-angle-right"></i></a>
                                      <div class="custom-menu">
                                           <div class="row">
                                                <div class="col-md-4">
-                                                    <ul class="list-links">
+                                                    <ul class="dropdown dropdown-tree">
 
                                                          @if(count($rs->children))
                                                          @include('home.categorytree',['children' => $rs->children])
@@ -66,7 +65,7 @@
                       <li><a href="{{route('contact')}}">Contact Us</a></li>
                       <li><a href="{{route('references')}}">References</a></li>
                       @guest
-                         <li><a href="/loginuser">Login </a></li>
+                         <li><a href="/loginuser"><i class="fa fa-user-o"></i>Login </a></li>
                       @endguest
                       <li><a href="/registeruser">Register </a></li>
                       <li class="header-account dropdown default-dropdown">

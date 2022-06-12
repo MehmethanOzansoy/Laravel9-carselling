@@ -76,88 +76,6 @@
          </div>
      </section>
 
-     <section>
-         <div class="container">
-             <div class="row">
-                 <div class="col-md-12 col-sm-12">
-                     <div class="section-title text-center">
-                         <h2>Latest Blog posts <small>Lorem ipsum dolor sit amet.</small></h2>
-                     </div>
-                 </div>
-
-                 <div class="col-md-4 col-sm-4">
-                     <div class="courses-thumb courses-thumb-secondary">
-                         <div class="courses-top">
-                             <div class="courses-{{asset('assets')}}/image">
-                                 <img src="{{asset('assets')}}/images/blog-1-720x480.jpg" class="img-responsive" alt="">
-                             </div>
-                             <div class="courses-date">
-                                 <span title="Author"><i class="fa fa-user"></i> John Doe</span>
-                                 <span title="Date"><i class="fa fa-calendar"></i> 12/06/2020 10:30</span>
-                                 <span title="Views"><i class="fa fa-eye"></i> 114</span>
-                             </div>
-                         </div>
-
-                         <div class="courses-detail">
-                             <h3><a href="blog-post-details.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h3>
-                         </div>
-
-                         <div class="courses-info">
-                             <a href="blog-post-details.html" class="section-btn btn btn-primary btn-block">Read More</a>
-                         </div>
-                     </div>
-                 </div>
-
-                 <div class="col-md-4 col-sm-4">
-                     <div class="courses-thumb courses-thumb-secondary">
-                         <div class="courses-top">
-                             <div class="courses-{{asset('assets')}}/image">
-                                 <img src="{{asset('assets')}}/images/blog-2-720x480.jpg" class="img-responsive" alt="">
-                             </div>
-                             <div class="courses-date">
-                                 <span title="Author"><i class="fa fa-user"></i> John Doe</span>
-                                 <span title="Date"><i class="fa fa-calendar"></i> 12/06/2020 10:30</span>
-                                 <span title="Views"><i class="fa fa-eye"></i> 114</span>
-                             </div>
-                         </div>
-
-                         <div class="courses-detail">
-                             <h3><a href="blog-post-details.html">Tempora molestiae, iste, consequatur unde sint praesentium!</a></h3>
-                         </div>
-
-                         <div class="courses-info">
-                             <a href="blog-post-details.html" class="section-btn btn btn-primary btn-block">Read More</a>
-                         </div>
-                     </div>
-                 </div>
-
-                 <div class="col-md-4 col-sm-4">
-                     <div class="courses-thumb courses-thumb-secondary">
-                         <div class="courses-top">
-                             <div class="courses-{{asset('assets')}}/image">
-                                 <img src="{{asset('assets')}}/images/blog-3-720x480.jpg" class="img-responsive" alt="">
-                             </div>
-                             <div class="courses-date">
-                                 <span title="Author"><i class="fa fa-user"></i> John Doe</span>
-                                 <span title="Date"><i class="fa fa-calendar"></i> 12/06/2020 10:30</span>
-                                 <span title="Views"><i class="fa fa-eye"></i> 114</span>
-                             </div>
-                         </div>
-
-                         <div class="courses-detail">
-                             <h3><a href="blog-post-details.html">A voluptas ratione, error provident distinctio, eaque id officia?</a></h3>
-                         </div>
-
-                         <div class="courses-info">
-                             <a href="blog-post-details.html" class="section-btn btn btn-primary btn-block">Read More</a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-
 
      <section id="testimonial">
          <div class="container">
@@ -261,12 +179,9 @@
 
                          <br>
 
-                         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore molestias
-                             ipsa veritatis nihil iusto maiores natus dolor, a reiciendis corporis obcaecati ex.
-                             Totam assumenda impedit aut eum, illum distinctio saepe explicabo.
-                             Consequuntur molestiae similique id quos, quasi quas perferendis laboriosam,
-                             fugit natus odit totam! Id dolores saepe, sint debitis rerum dolorem tempora aliquid,
-                             pariatur enim nisi. Quia ab iusto assumenda.</p>
+                         <p class="lead">Volkswagen bugün ID.4 elektrikli SUV modelinin yeni bir dört tekerlekten çekişli versiyonunu duyurdu. ID.4 Pro 4Motion adı verilen model, tıpkı ID.4 GTX gibi çift motora sahip ancak güç tarafında biraz daha mütevazı.
+
+                         Yeni Volkswagen ID.4 Pro 4Motion'ın arka aksında bulunan motor 204 PS güç üretiyor. Ekstra güç ve çekiş gereken durumlarda devreye giren ön akstaki motor ise 109 PS güce sahip. İki motor birlikte 265 PS güç sunuyor ki bunun GTX versiyonuna göre 34 PS daha düşük olduğunu söylemek mümkün. 0-100 km/s hızlanmasını 6.9 saniyede tamamlayan modelin azami hızı da 180 km/s ile sınırlandırılmış.</p>
                      </div>
                  </div>
              </div>

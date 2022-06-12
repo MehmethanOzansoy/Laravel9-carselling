@@ -1,66 +1,49 @@
 @extends('layouts.frontbase')
 
-
-@section('title', ' Frequently Asked Question | '. $setting->title)
-
-@section('description', $setting->description)
-
-@section('keywords', $setting->keywords)
-
+@section('title', "FAQ")
 @section('head')
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link rel="stylesheet" href="/assets/css/pasa.css">
 @endsection
-
 @section('content')
 
-<div id="breadcrumb">
-    <div class="container">
-        <ul class="breadcrumb">
-
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li class="active">Frequently Asked Question</li>
-
-        </ul>
+    <div class="page-banner overlay-dark bg-image" style="background-image: url(/storage/images/photos2.jpg);">
+        <div class="banner-section">
+            <div class="container text-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+                        <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+                    </ol>
+                </nav>
+                <h1 class="font-weight-normal">FAQ</h1>
+            </div> <!-- .container -->
+        </div> <!-- .banner-section -->
     </div>
-</div>
 
-<div class="section">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h1>Frequently Asked Question</h1>
-                </div>
-
-        <div id="accordion">
-                @foreach($datalist as $rs)
-
-                    <div class="card">
-                        <div class="card-header">
-                            <a class="card-link" data-toggle="collapse" href="#collapseOne {{$loop->iteration}}">
-                                {{$rs->question}}
-                            </a>
-                        <div>
-                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                                <div class="card-body">
-                                {!! $rs->answer !!}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-group" id="accordion">
+                        @foreach($datalist as $rs)
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <h2 data-toggle="collapse" data-parent="#accordion" href="#collapse{{$rs->id}}" class="collapsed" style="cursor:pointer">{{$rs->question}}</h2>
+                                </h4>
+                            </div>
+                            <div id="collapse{{$rs->id}}" class="panel-collapse collapse" style="height: 0px;">
+                                <div class="panel-body">
+                                    {!! $rs->answer !!}
                                 </div>
+                            </div>
                         </div>
-                        
+                        @endforeach
                     </div>
-                    
-                @endforeach
+                </div>
             </div>
         </div>
-            
-
-        </div>
     </div>
-</div>
 
 
 @endsection
