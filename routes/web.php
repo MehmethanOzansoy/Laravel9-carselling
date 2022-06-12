@@ -72,6 +72,10 @@ Route::middleware('auth')->group(function ()
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
 
         Route::get('/','index') -> name('index');
+        Route::get('/reviews','reviews') -> name('reviews');
+        Route::get('/reviewdestroy/{id}','reviewdestroy') -> name('reviewdestroy');
+
+
     });
     //********************** Admin Panel Routes*********************//
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () 
