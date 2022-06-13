@@ -75,7 +75,7 @@
                               <ul class="dropdown-menu">
                                    <a href="/logoutuser" class="text-uppercase"> Logout </a>
                                    <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user-o"></i> My Profile</a></li>
-                                   <li><a href="#"><i class="fa fa-heart-o"></i> My Orders</a></li>
+                                   <li><a href="/loginadmin"><i class="fa fa-heart-o"></i> My Admin</a></li>
                                    <li><a href="{{route('userpanel.reviews')}}"><i class="fa fa-exchange"></i> My Reviews</a></li>
                                    <li><a href="#"><i class="fa fa-check"></i> Checkouth</a></li>
                                    <li><a href="#"><i class="fa fa-unlock-alt"></i> My Product</a></li>
