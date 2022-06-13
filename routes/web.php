@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminPanel\AdminCarController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
+use App\Http\Controllers\HomeCarController;
 use App\Http\Controllers\UserController;
 use App\Models\Role;
 
@@ -48,6 +49,8 @@ Route::view('/registeruser','home.register') -> name('registeruser');
 Route::get('/logoutuser',[HomeController::class,'logout']) -> name('logoutuser');
 Route::view('/loginadmin','admin.login') -> name('loginadmin');
 Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck']) -> name('loginadmincheck');
+Route::post('/homecar',[HomeCarController::class,'homecar']) -> name('loginadmincheck');
+
 
 
 
@@ -75,8 +78,19 @@ Route::middleware('auth')->group(function ()
         Route::get('/reviews','reviews') -> name('reviews');
         Route::get('/reviewdestroy/{id}','reviewdestroy') -> name('reviewdestroy');
 
+         //********************** USER Car Routes*********************//
+        Route::prefix('/homecar')->name('homecar.')->controller(HomeCarController::class)->group(function () {
+            Route::get('/','index') -> name('index');
+            Route::get('/create','create') -> name('create');
+            Route::post('/store','store') -> name('store');
+            Route::get('/edit/{id}','edit') -> name('edit');
+            Route::post('/update/{id}','update') -> name('update');
+            Route::get('/destroy/{id}','destroy') -> name('destroy');
+            Route::get('/show/{id}','show') -> name('show');
+        });
 
     });
+    
     //********************** Admin Panel Routes*********************//
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () 
     {

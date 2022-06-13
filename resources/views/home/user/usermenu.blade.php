@@ -3,7 +3,7 @@
     <li><a href="#"><i class="fa fa-heart-o"></i>My Orders</a></li>
     <li><a href="{{route('userpanel.reviews')}}"><i class="fa fa-exchange"></i>My Reviews</a></li>
     <li><a href="#"><i class="fa fa-check"></i>Checkouth</a></li>
-    <li><a href="#"><i class="fa fa-unlock-alt"></i>My Product</a></li>
+    <li><a href="/userpanel/homecar"><i class="fa fa-unlock-alt"></i>My Product</a></li>
     <li><a href="\logout"><i class="fa fa-user-plus"></i>Logout</a></li>
 
 </ul>
